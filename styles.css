@@ -1,8 +1,163 @@
-/*
+.claude-aide-view {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.claude-aide-header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-4-2);
+        padding: var(--size-4-2) var(--size-4-3);
+        border-bottom: 1px solid var(--background-modifier-border);
+}
 
-If your plugin does not need CSS, delete this file.
+.claude-aide-title {
+        font-size: var(--font-ui-large);
+        margin: 0;
+}
 
-*/
+.claude-aide-status {
+        color: var(--text-muted);
+        font-size: var(--font-ui-small);
+}
+
+.claude-aide-session-id {
+        font-size: var(--font-ui-small);
+        color: var(--text-faint);
+}
+
+.claude-aide-header-buttons {
+        display: flex;
+        gap: var(--size-4-2);
+}
+
+.claude-aide-header-buttons button {
+        padding: var(--size-4-1) var(--size-4-3);
+        border-radius: var(--radius-s);
+        border: 1px solid var(--background-modifier-border);
+        background: var(--background-primary-alt);
+        color: var(--text-normal);
+        cursor: pointer;
+}
+
+.claude-aide-header-buttons button.mod-cta {
+        border: none;
+        background: var(--interactive-accent);
+        color: var(--text-on-accent);
+}
+
+.claude-aide-header-buttons button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+}
+
+.claude-aide-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: var(--size-4-3);
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-4-3);
+}
+
+.claude-aide-empty {
+        margin-top: var(--size-4-3);
+        color: var(--text-muted);
+        font-size: var(--font-ui-small);
+}
+
+.claude-aide-message {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-4-1);
+}
+
+.claude-aide-message-user {
+        align-items: flex-end;
+}
+
+.claude-aide-message-assistant,
+.claude-aide-message-system,
+.claude-aide-message-error {
+        align-items: flex-start;
+}
+
+.claude-aide-bubble {
+        max-width: 100%;
+        width: fit-content;
+        border-radius: var(--radius-m);
+        padding: var(--size-4-2) var(--size-4-3);
+        background: var(--background-primary-alt);
+        border: 1px solid transparent;
+}
+
+.claude-aide-message-user .claude-aide-bubble {
+        background: var(--interactive-accent);
+        color: var(--text-on-accent);
+}
+
+.claude-aide-message-error .claude-aide-bubble {
+        background: var(--background-modifier-error);
+        color: var(--text-on-accent);
+}
+
+.claude-aide-bubble-content p {
+        margin: 0;
+}
+
+.claude-aide-message-footer {
+        font-size: var(--font-ui-small);
+        color: var(--text-faint);
+}
+
+.claude-aide-message-footer.is-hidden {
+        display: none;
+}
+
+.claude-aide-message.is-streaming .claude-aide-bubble {
+        border-color: var(--interactive-accent);
+}
+
+.claude-aide-input {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-4-2);
+        padding: var(--size-4-3);
+        border-top: 1px solid var(--background-modifier-border);
+}
+
+.claude-aide-input textarea {
+        width: 100%;
+        resize: vertical;
+        min-height: 80px;
+        padding: var(--size-4-2);
+        border-radius: var(--radius-s);
+        border: 1px solid var(--background-modifier-border);
+        background: var(--background-primary);
+        color: var(--text-normal);
+}
+
+.claude-aide-input textarea:disabled {
+        opacity: 0.6;
+}
+
+.claude-aide-input-controls {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--size-4-2);
+}
+
+.claude-aide-input-controls .mod-cta {
+        padding: var(--size-4-1) var(--size-4-3);
+        border-radius: var(--radius-s);
+        border: none;
+        cursor: pointer;
+        background: var(--interactive-accent);
+        color: var(--text-on-accent);
+}
+
+.claude-aide-input-controls .mod-cta:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+}
